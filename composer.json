@@ -1,0 +1,21 @@
+{
+    "name": "tonning/media",
+    "description": "Media Library",
+    "require": {
+        "nesbot/carbon": "~1.19",
+        "intervention/image": "^2.2"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Kristoffer Tonning",
+            "email": "tonning.public@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-0": {
+            "Tonning\\Media": "src/"
+        }
+    },
+    "minimum-stability": "stable"
+}
