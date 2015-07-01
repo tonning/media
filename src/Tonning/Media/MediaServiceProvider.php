@@ -29,12 +29,11 @@ class MediaServiceProvider extends ServiceProvider {
 	 */
 	public function register()
 	{
-		$this->app->bindShared('media', function () {
-            return $this->app->make('Tonning\Media\Media');
+        $this->app['media'] = $this->app->share(function ($app) {
+            return new Media();
         });
 
-        $app->alias('media', 'Tonning\Media\Media');
-
+        $this->app->alias('media', 'Tonning\Media\Media');
 	}
 
 }

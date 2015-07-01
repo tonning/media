@@ -1,4 +1,6 @@
-<?php namespace App;
+<?php
+
+namespace Tonning\Media;
 
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
