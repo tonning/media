@@ -27,3 +27,8 @@ And, for convenience, add a facade alias to this same file at the bottom:
     'Image'     => Intervention\Image\Facades\Image::class
 ];
 ```
+
+Publish config to `config/media.php`.
+```php
+php artisan vendor:publish
+```
