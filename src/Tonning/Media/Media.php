@@ -235,7 +235,7 @@ class Media extends Model {
 		$media = $this->find($id);
 
 		if ($media) {
-			return $media->first()->url;
+			return $media->url;
 		}
 
 		return $this->placeholder('File not found', 'ID: ' . $id);
