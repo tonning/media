@@ -37,7 +37,7 @@ class Media extends Model {
 
 		$prefix = $this->filenamePrefix();
 
-		$filename = $prefix . str_slug($this->getBaseFilename($file->getClientOriginalName(), $file->getClientOriginalExtension()) . '.' . $file->getClientOriginalExtension();
+		$filename = $prefix . str_slug($this->getBaseFilename($file->getClientOriginalName(), $file->getClientOriginalExtension())) . '.' . $file->getClientOriginalExtension();
 
 		$image = ($this->isImage($file)) ? Image::make($file) : false;
 
@@ -102,7 +102,7 @@ class Media extends Model {
 
 		$uploadPath = $this->findOrCreateUploadDirectory();
 
-		$filename = $prefix . str_slug($this->getBaseFilename($file->getClientOriginalName(), $file->getClientOriginalExtension()) . '.' . $file->getClientOriginalExtension();
+		$filename = $prefix . str_slug($this->getBaseFilename($file->getClientOriginalName(), $file->getClientOriginalExtension())) . '.' . $file->getClientOriginalExtension();
 
 		$extension = '.' . $file->getClientOriginalExtension();
 
