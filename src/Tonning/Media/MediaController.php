@@ -21,6 +21,28 @@ class MediaController extends Controller {
 	}
 
 	/**
+     * Generate a json array for CKEditor's Image Browser plugin
+     *
+     * @return json
+     */
+    public function ckeditor()
+    {
+        $media = Media::latest()->get();
+
+        if (!$media)
+        {
+            return [];
+        }
+
+        foreach ($media as $item)
+        {
+            $result[] = ['image' => $item->url];
+        }
+
+        return $result;
+    }
+
+	/**
 	 * Show the form for creating a new resource.
 	 *
 	 * @return Response
