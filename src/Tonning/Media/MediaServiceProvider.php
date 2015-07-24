@@ -2,16 +2,17 @@
 
 namespace Tonning\Media;
 
+use Illuminate\Routing\Router;
 use Illuminate\Support\ServiceProvider;
 
 class MediaServiceProvider extends ServiceProvider {
 
-	/**
-	 * Bootstrap any application services.
-	 *
-	 * @return void
-	 */
-	public function boot()
+    /**
+     * Bootstrap any application services.
+     *
+     * @param Router $router
+     */
+	public function boot(Router $router)
 	{
         if (! $this->app->routesAreCached()) {
             require __DIR__.'/../../../routes.php';
@@ -20,6 +21,8 @@ class MediaServiceProvider extends ServiceProvider {
 		$this->publishes([
             __DIR__.'/../../config/media.php' => config_path('media.php')
         ]);
+
+        $router->model('media', 'Tonning\Media\Media');
 	}
 
 	/**
