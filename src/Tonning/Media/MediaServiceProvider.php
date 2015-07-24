@@ -14,15 +14,15 @@ class MediaServiceProvider extends ServiceProvider {
      */
 	public function boot(Router $router)
 	{
-        if (! $this->app->routesAreCached()) {
-            require __DIR__.'/../../../routes.php';
-        }
+	        if (! $this->app->routesAreCached()) {
+	            require __DIR__.'/../../../routes.php';
+	        }
 
 		$this->publishes([
-            __DIR__.'/../../config/media.php' => config_path('media.php')
-        ]);
+	            __DIR__.'/../../config/media.php' => config_path('media.php')
+	        ]);
 
-        $router->model('media', 'Tonning\Media\Media');
+        	$router->model('media', 'Tonning\Media\Media');
 	}
 
 	/**
@@ -36,11 +36,11 @@ class MediaServiceProvider extends ServiceProvider {
 	 */
 	public function register()
 	{
-        $this->app['media'] = $this->app->share(function ($app) {
-            return new Media();
-        });
-
-        $this->app->alias('media', 'Tonning\Media\Media');
+	        $this->app['media'] = $this->app->share(function ($app) {
+	            return new Media();
+	        });
+	
+	        $this->app->alias('media', 'Tonning\Media\Media');
 	}
 
 }
